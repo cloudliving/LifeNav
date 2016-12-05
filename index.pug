@@ -1,0 +1,24 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 生活导航
+		script(src="src/lib/flexible.js")
+		link(rel="stylesheet", href="src/css/common.styl")
+		link(rel="stylesheet", href="src/css/index.styl")
+	body
+		header.life-header
+			a.life-header-nav
+				img(src="src/images/nav.png")
+			span.life-header-ctn 生活导航
+			a.life-header-user
+				img(src="src/images/user.png")
+
+
+		ul.life-list
+			each item,index in ['菜市场','电费缴费点', '水费缴费点', '气费缴费点', '广电缴费点', '移动营业厅', '电信营业厅', '联通营业厅', '银行', 'ATM', '学校', '幼儿园', '医院', '药店', '超市', '快递物流', '公交站', '加油站', '火车票代售点', '政府机构']
+				li.life-list-item
+					a(href="#")
+						img(src="src/images/"+(index+1)+'.png')
+						p=item

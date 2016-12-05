@@ -1,0 +1,46 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 图书详情
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/book-detail.styl")
+	body
+
+		#app
+			p.book-detail-msg(v-show="loading") 加载中...请稍后(平均10秒)
+
+			div(v-show="name")
+				section.book-detail-panel
+					div
+						img.book-detail-panel-thumb(:src="'http://tnfs.tngou.net/image'+img")
+					div.book-detail-panel-info
+						div
+							p.book-detail-panel-title {{name}}
+							p.book-detail-panel-author {{author}}
+							p.book-detail-panel-count 阅读量  {{count}}
+							p.book-detail-panel-time 发布时间  {{time}}
+
+				section.book-detail-intro {{summary}}
+
+				section.book-detail-chapters
+					p.book-detail-chapters-title 章节目录
+					ul
+						li.book-detail-chapters-list(v-for="(item, index) in list", @click="read(item, index)") {{index+1}} - {{item.title}}
+
+
+				section.book-detail-ctn(v-show="chapter.title", @scroll.stop)
+					header.book-detail-ctn-header
+						img.book-detail-ctn-back(src="../images/back.png")(@click="back()")
+						span 第{{select+1}}章-{{chapter.title}}
+					div.book-detail-ctn-ctn(v-html="chapter.message")
+					div.book-detail-ctn-btns
+						button(@click="prev()") 上一章
+						button(@click="next()") 下一章
+
+
+		script(src="../lib/zepto.min.js")
+		script(src="../lib/vue.js")
+		script(src="../js/book-detail.js")

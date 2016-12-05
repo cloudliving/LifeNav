@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 图书分类
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/book-classes.styl")
+	body
+
+		#app
+			ul.book-classes
+				li.book-classes-item(v-for="item in classes")
+					a(:href="'book-list.html?id='+item.id") {{item.name}}
+
+
+
+
+
+
+		script(src="../lib/zepto.min.js")
+		script(src="../lib/vue.js")
+		script(src="../js/book-classes.js")
+
+

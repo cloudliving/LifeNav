@@ -1,0 +1,41 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 图书列表
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/book-list.styl")
+	body
+
+		#app
+			p.book-list-notify(v-show='loading') 加载中 请稍等
+
+			ul.book-list
+				li(v-for="item in list")
+					a(:href="'book-detail.html?id='+item.id")
+						div.book-list-item
+							div
+								img.book-list-thumb(:src="'http://tnfs.tngou.net/image'+item.img")
+							div.book-list-info
+								p.book-list-title {{item.name}}
+								p.book-list-author {{item.author}}
+								p.book-list-intro {{item.summary}}
+								p.book-list-count 总阅读量 {{item.count}}
+
+
+			div.book-list-pages
+				button.book-list-pages-btn(@click="prev()", :disabled="loading") 上一页
+
+				p.book-list-pages-count {{curPage}} / {{allPage}}
+				ul
+					li(v-for="item in pages", @click="click(item)") {{item}}
+
+				button.book-list-pages-btn(@click="next()", :disabled="loading") 下一页
+
+
+
+		script(src="../lib/zepto.min.js")
+		script(src="../lib/vue.js")
+		script(src="../js/book-list.js")
