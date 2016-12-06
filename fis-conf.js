@@ -1,3 +1,6 @@
+const info = require('./package.json')
+
+fis.set('version', info.version)
 fis.set('project.ignore', [
 		'.git/**',
 		'node_modules/**',
@@ -8,20 +11,30 @@ fis.set('project.ignore', [
 		'fis-conf.js'
 	])
 
+
 fis
-	.match('*.pug', {
-		parser: 'pug',
-		rExt: '.html'
-	})
-	.match('src/js/*.js', {
-		parser: fis.plugin('babel-5.x')
-	})
-	.match('*.styl', {
+	.match('src/css/(*.styl)', {
 		parser: 'stylus',
 		preprocessor: fis.plugin('autoprefixer', {
 			'browsers': ['last 2 versions', 'iOS 7']
 		}),
-		rExt: '.css' 
+		rExt: '.css',
+		release: '/${version}/css/$1'
+	})
+	.match('src/images/(**)', {
+		release: '/images/$1'
+	})
+	.match('src/js/(**)', {
+		parser: fis.plugin('babel-5.x'),
+		release: '/${version}/js/$1'
+	})
+	.match('src/lib/(**)', {
+		release: '/lib/$1'
+	})
+	.match('src/view/(**)', {
+		parser: 'pug',
+		rExt: '.html',
+		release: '/view/$1'
 	})
 
 
@@ -36,9 +49,12 @@ fis
 	.match('*.js', {
 		optimizer: fis.plugin('uglify-js')
 	})
-
 	.match('*.png', {
+		useHash: true,
 		optimizer: fis.plugin('png-compressor', {
 	      type : 'pngquant'
 	    })
+	})
+	.match('src/lib/(**)', {
+		useHash: true
 	})

@@ -33,7 +33,7 @@ html(lang='zh-CN')
 
 				section.book-detail-ctn(v-show="chapter.title", @scroll.stop)
 					header.book-detail-ctn-header
-						img.book-detail-ctn-back(src="../images/back.png")(@click="back()")
+						img.book-detail-ctn-back(src="../images/back.png", @click="back()")
 						span 第{{select+1}}章-{{chapter.title}}
 					div.book-detail-ctn-ctn(v-html="chapter.message")
 					div.book-detail-ctn-btns
