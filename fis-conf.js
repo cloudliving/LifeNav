@@ -41,7 +41,7 @@ fis
 fis
 	.media('prod')
 	.match('!*.pug', {
-		domain: 'http://cloudliving-img.b0.upaiyun.com/static/Home/lifeNav'
+		domain: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit'
 	})
 	.match('*.styl', {
 		optimizer: fis.plugin('clean-css')

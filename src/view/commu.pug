@@ -1,0 +1,17 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 多彩社区
+		script(src="../lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/grid.styl")
+	body
+
+		ul.grid-list
+			each item,index in ['便民服务', '漂流书屋', '志愿活动', '爱心互助', '生活导航']
+				li.grid-list-item
+					a(href="#")
+						img(src="../images/commu"+(index+1)+'.png')
+						p=item

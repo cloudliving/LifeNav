@@ -1,0 +1,18 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 政务服务
+		script(src="../lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/grid.styl")
+	body
+
+		ul.grid-list
+			each item,index in ['社会保障', '卫生人口', '弱势群体', '党员服务', '其他']
+				li.grid-list-item
+					a(href="#")
+						img(src="../images/office"+(index+1)+'.png')
+						p=item
+

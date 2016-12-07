@@ -1,0 +1,25 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 身边的停车场
+		script(src="../lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/life-pack.styl")
+	body
+
+		header.life-pack-position
+			strong 当前位置：
+			span 二炮幼儿园
+
+		p.life-pack-radius 附近100m的停车场
+
+		ul.life-pack-list
+			li.life-pack-item
+				.row
+					p.name 龙韵大厦停车场
+					p.radius 47m
+				.row
+					p.site 工农兵路133号
+					a(href="#").view 查看
