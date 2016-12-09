@@ -1,6 +1,6 @@
-const info = require('./package.json')
+const versionArray = require('./package.json').version.split('.')
 
-fis.set('version', info.version)
+fis.set('version', `${versionArray[0]}.${versionArray[1]}.0`)
 fis.set('project.ignore', [
 		'.git/**',
 		'node_modules/**',
@@ -44,9 +44,11 @@ fis
 		domain: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit'
 	})
 	.match('*.styl', {
+		useHash: true,
 		optimizer: fis.plugin('clean-css')
 	})
 	.match('*.js', {
+		useHash: true,
 		optimizer: fis.plugin('uglify-js')
 	})
 	.match('*.png', {
@@ -54,7 +56,4 @@ fis
 		optimizer: fis.plugin('png-compressor', {
 	      type : 'pngquant'
 	    })
-	})
-	.match('src/lib/(**)', {
-		useHash: true
 	})

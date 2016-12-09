@@ -6,15 +6,26 @@ html(lang='zh-CN')
 		title 便民服务
 		script(src="../lib/flexible.js")
 		link(rel="stylesheet", href="../css/common.styl")
-		link(rel="stylesheet", href="../css/grid.styl")
+		link(rel="stylesheet", href="../css/careAndOffice.styl")
 	body
 
-		ul.grid-list
+		img.care-header(src="../images/carebg.png")
+
+		ul.care-list
 			each item,index in ['家政', '教育', '养老', '娱乐', '其他']
-				li.grid-list-item
+				li
 					a(href="#")
-						img(src="../images/care"+(index+1)+'.png')
+						img.icon(src="../images/care"+(index+1)+'.png')
 						p=item
 
-		.care-one-call
-			a 一键呼叫
+		.care-oneTouchCall
+			a(href="#") 一键呼叫
+
+		div.care-wrap
+			h2.care-msg 社区便民服务 一键呼
+
+			ul.care-tags
+				li.care-tags-item 惠民价格
+				li.care-tags-item 优质服务
+				li.care-tags-item 流程简单
+				li.care-tags-item 平台保障

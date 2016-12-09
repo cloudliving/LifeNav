@@ -6,13 +6,20 @@ html(lang='zh-CN')
 		title 政务服务
 		script(src="../lib/flexible.js")
 		link(rel="stylesheet", href="../css/common.styl")
-		link(rel="stylesheet", href="../css/grid.styl")
+		link(rel="stylesheet", href="../css/careAndOffice.styl")
 	body
 
-		ul.grid-list
+		img.office-header(src="../images/officebg.png")
+
+		ul.office-list
 			each item,index in ['社会保障', '卫生人口', '弱势群体', '党员服务', '其他']
-				li.grid-list-item
+				li
 					a(href="#")
-						img(src="../images/office"+(index+1)+'.png')
+						img.icon(src="../images/office"+(index+1)+'.png')
 						p=item
 
+		.office-oneTouchCall
+			a(href="#") 政务转接
+
+		div.office-wrap
+			h2.office-msg 让群众好办事 为群众办好事
