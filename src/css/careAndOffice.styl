@@ -1,36 +1,5 @@
-headerImage()
-	display block
-	width 100%
-	margin-bottom .2rem
+@import '../mixin'
 
-grid()
-	display flex
-	flex-wrap wrap
-	border 1px solid #eee
-	border-width 1px 0
-	background #fff
-	&>li
-		width 33.33%
-		padding .35rem 0
-		border 1px solid #eee
-		border-width 0 1px 1px 0
-		&:nth-of-type(n+4)
-			border-bottom-width 0
-		&:nth-of-type(3n)
-			border-right-width 0
-
-btn()
-	display flex
-	justify-content center
-	>a
-		width 4.5rem
-		height .66rem
-		background #ff624e
-		color #fff
-		border-radius 4px
-		text-align center
-		line-height .66rem
-		font-size 14px
 
 body
 	background #f0eff5
@@ -46,7 +15,7 @@ body
 		>li
 			text-align center
 		.icon
-			width .5rem
+			width .50rem
 
 	&-oneTouchCall
 		btn()

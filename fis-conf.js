@@ -36,6 +36,9 @@ fis
 		rExt: '.html',
 		release: '/view/$1'
 	})
+	.match('src/mixin/(**)', {
+		release: false
+	})
 
 
 fis
