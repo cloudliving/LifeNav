@@ -1,6 +1,4 @@
-const versionArray = require('./package.json').version.split('.')
-
-fis.set('version', `${versionArray[0]}.${versionArray[1]}.0`)
+fis.set('version', require('./package.json').version)
 fis.set('project.ignore', [
 		'.git/**',
 		'node_modules/**',
@@ -55,7 +53,6 @@ fis
 		optimizer: fis.plugin('uglify-js')
 	})
 	.match('*.png', {
-		useHash: true,
 		optimizer: fis.plugin('png-compressor', {
 	      type : 'pngquant'
 	    })

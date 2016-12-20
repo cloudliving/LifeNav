@@ -1,6 +1,6 @@
 {
   "name": "fruit",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "水果湖街道",
   "main": "index.js",
   "scripts": {

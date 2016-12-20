@@ -1,0 +1,35 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 天气
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/weather.styl")
+	body
+
+
+		#app
+			.info
+				div
+					p.city 武汉市
+					span.details 有雾
+					p.temp 11
+
+			.today
+				span 周三
+				span 11 ~ 8℃
+			.weekList
+				ul
+					each val in [1,2,3,4,5,6,7]
+						li
+							span.date 周四
+							div.icon
+								img(src="../images/weather-qt.png")
+							span.temp 11 ~ 8℃
+
+
+		script(src="../lib/zepto.min.js")
+		//- script(src="../lib/vue.js")
+		//- script(src="../js/weather.js")
