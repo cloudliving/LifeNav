@@ -21,6 +21,7 @@ fis
 	})
 	.match('src/images/(**)', {
 		release: '/images/$1'
+		// useHash: true
 	})
 	.match('src/js/(**)', {
 		parser: fis.plugin('babel-5.x'),

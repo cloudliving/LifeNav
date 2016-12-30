@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 身边的网格员
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/gridmen.styl")
+	body
+
+		ul.gridmen-list
+		-var phone = [17786377906,17786377870,17786377871,17786377905,17786377903,17786377902,17786377901,17786379982,17786377896,17786377895,17786377661,17786377652,17786377893,17786377892,17786377891,17786377890,17786377660,17786377879,17786377875,17786377873,17786377872]
+		-var avatar = ['00','default','default','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18']
+		-var name = ['叶玮','马孝钢','胡东青','许元姣','肖琦','周泉','姜辉','汪小丽','盛宏杰','刘慧','陈万蕾','许邻方','袁倩','朱霞','陈芬','梁芬','江英','石娟','陶静','王慧','万少华']
+		-var identify = ['书记','站长','站长','第01网格','第02网格','第03网格','第04网格','第05网格','第06网格','第07网格','第08网格','第09网格','第10网格','第11网格','第12网格','第13网格','第14网格','第15网格','第16网格','第17网格','第18网格']
+		each val,index in phone
+			li.gridmen-list-item
+				img.gridmen-avatar(src=`../images/gridmen/${avatar[index]}.png`)
+				div.gridmen-info
+					p
+						span.gridmen-name=name[index]
+						span.gridmen-point ·
+						span.gridmen-identity=identify[index]
+					p.gridmen-phone=val
+				a.gridmen-call(href=`tel:${val}`) 拨打

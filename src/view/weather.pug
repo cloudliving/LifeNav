@@ -9,25 +9,43 @@ html(lang='zh-CN')
 		link(rel="stylesheet", href="../css/weather.styl")
 	body
 
+		.wrap
+			.header
+				.temp
+					div.temp-low
+						p 03°
+						p 低温
+					div.temp-line 
+						span.temp-line-left
+						span 今天
+						span.temp-line-right
+					div.temp-height
+						p 12°
+						p 高温
 
-		#app
-			.info
+			.ctn
+				div.ctn-weather
+					img(src="../images/weather-xy.png")
+					p 中雨
+
+				div.ctn-temp 
+					span 08
+					span.point °
+
 				div
-					p.city 武汉市
-					span.details 有雾
-					p.temp 11
+					.ctn-date 12日 周一
+					.ctn-city 武汉
 
-			.today
-				span 周三
-				span 11 ~ 8℃
-			.weekList
-				ul
+			.footer
+				ul.future
 					each val in [1,2,3,4,5,6,7]
-						li
-							span.date 周四
-							div.icon
-								img(src="../images/weather-qt.png")
-							span.temp 11 ~ 8℃
+						li.future-item
+							p 周日
+							img(src="../images/weather-qt.png")
+							p 晴
+							p 2~6°
+
+
 
 
 		script(src="../lib/zepto.min.js")
