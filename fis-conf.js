@@ -1,4 +1,3 @@
-fis.set('version', require('./package.json').version)
 fis.set('project.ignore', [
 		'.git/**',
 		'node_modules/**',
@@ -17,7 +16,7 @@ fis
 			'browsers': ['last 2 versions', 'iOS 7']
 		}),
 		rExt: '.css',
-		release: '/${version}/css/$1'
+		release: '/css/$1'
 	})
 	.match('src/images/(**)', {
 		release: '/images/$1'
@@ -25,13 +24,16 @@ fis
 	})
 	.match('src/js/(**)', {
 		parser: fis.plugin('babel-5.x'),
-		release: '/${version}/js/$1'
+		release: '/js/$1'
 	})
 	.match('src/lib/(**)', {
 		release: '/lib/$1'
 	})
 	.match('src/view/(**)', {
-		parser: 'pug',
+		// parser: 'pug',
+		parser: fis.plugin('pug', {
+			pretty: true
+		}),
 		rExt: '.html',
 		release: '/view/$1'
 	})

@@ -1,12 +1,36 @@
+body
+	background #f0eff5
+
 .book-classes
 	display flex
 	flex-wrap wrap
+	background #fff
 	
-	& &-item
+	&-banner
+		display block
+		width 100%
+		margin-bottom .2rem
+
+	&-item
+		position relative
 		width 50%
 		line-height 1rem
 		text-align center
 		border-bottom 1px solid #eee
 
-	& &-item:nth-of-type(2n)
+	&-item:nth-of-type(2n)
 		border-left 1px solid #eee
+
+	&-icon
+		position absolute
+		left .43rem
+		top 50%
+		width .45rem
+		height .45rem
+		margin-top -.225rem
+
+	&-slogan
+		margin-top .8rem
+		text-align center
+		img
+			width 2.7rem

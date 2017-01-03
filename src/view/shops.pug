@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-CN')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		title 附近商铺
+		script(src="..//lib/flexible.js")
+		link(rel="stylesheet", href="../css/common.styl")
+		link(rel="stylesheet", href="../css/shops.styl")
+	body
+
+		ul.shops-list
+			each item,index in [{name: '武汉三镇桂林家电维修部', img: 1, intro: '仅售4元, 价值5元维修券, 节假日通用!', classes: '冰箱维修'},{name: '优越家电维修集团', img: 2, intro: '仅售4元, 价值5元维修券, 节假日通用!', classes: '冰箱维修'},{name: '印象家电维修公司', img: 3, intro: '仅售4元, 价值5元维修券, 节假日通用!', classes: '冰箱维修'},{name: '武汉修一修家电维修有限公司', img: 4, intro: '仅售4元, 价值5元维修券, 节假日通用!', classes: '冰箱维修'},{name: '武汉天发家电维修部', img: 5, intro: '仅售4元, 价值5元维修券, 节假日通用!', classes: '冰箱维修'}]
+				li.shops-list-item
+					div.shops-thumb-wrap
+						img.shops-thumb(src=`../images/shops/${index+1}.png`)
+					div.shops-info
+						h2.shops-info-name=item.name
+						p.shops-info-intro=item.intro
+						div.shops-attr
+							p.shops-classes=item.classes
+							div.shops-level
+								img.shops-level-icon(src="../images/shops/medal.png")
+								| 认证店铺
+
+
