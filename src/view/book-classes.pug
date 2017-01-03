@@ -14,7 +14,7 @@ html(lang='zh-CN')
 		#app
 			ul.book-classes
 				li.book-classes-item(v-for="(item,index) in classes")
-					img.book-classes-icon(:src="'../images/books/'+(index+1)+'.png'")
+					img.book-classes-icon(:src="getPath(index+1)")
 					a(:href="'book-list.html?id='+item.id") {{item.name == '两性生活' ? '情感生活' : item.name == '修养心里' ? '修养心理' : item.name }}
 					
 		div.book-classes-slogan

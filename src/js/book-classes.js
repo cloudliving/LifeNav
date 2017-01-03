@@ -6,8 +6,16 @@ let vm = new Vue({
 	data: {
 		classes: []
 	},
+	methods: {
+		getPath (filename) {
+			return this.isServer ? 
+			`http://cloudliving-img.b0.upaiyun.com/static/Home/fruit/images/books/${filename}.png`
+			: `../images/books/${filename}.png`
+		}
+	},
 	created () {
 		let that = this
+		that.isServer = !!location.hostname && location.hostname != 'localhost'
 
 		$.ajax({
 			url: URL,
