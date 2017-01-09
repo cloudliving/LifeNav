@@ -1,0 +1,56 @@
+extends ../../components/layout-shop
+
+block title
+	title 惠民物资库
+
+block hdQuote
+	link(rel="stylesheet", href="../../css/shops/commodity.styl")
+
+block ctn
+	// banner
+	div.ui-slider
+		ul.ui-slider-content
+			li.current
+				span(style="background-image:url(http://placehold.sinaapp.com/?640*200)")
+			li
+				span(style="background-image:url(http://placehold.sinaapp.com//?640*200)")
+			li
+				span(style="background-image:url(http://placehold.sinaapp.com//?640*200)")
+
+	// 商品信息
+	.box
+		p.commodity-title 荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶
+
+		div.commodity-info
+			span.commodity-cheapPrice 139元
+			del.commodity-fullPrice 219元
+			span.commodity-people 69/100人
+
+	// 商品属性
+	.box.bb
+		ul.commodity-attr
+			li.commodity-attr-item
+				p.commodity-attr-name 送至：
+				p.commodity-attr-val 湖北省武汉市查岗社区 <br> 这里是换行
+			li.commodity-attr-item
+				p.commodity-attr-name 重量：
+				p.commodity-attr-val 1.6kg
+
+	// 商品简介
+	.box.commodity-intro
+		p.commodity-intro-title.flex.aib 商品详情
+			span.small.mlauto 本产品由公益企业 乐秀网提供
+		div.commodity-intro-ctn
+			p 荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶荷兰牛奶牛奶牛奶牛奶
+
+	// 购物按钮
+	.commodity-buy
+		img.commodity-buy-icon(src="../../images/shops/tel.png")
+		span 咨询客服: 
+		a.commodity-buy-phone(href="tel: 400800832") 400800832
+		a.commodity-buy-btn(href="#") 加入购物车
+
+
+
+block ftQuote
+	script(src="../../js/shops/index.js")

@@ -10,7 +10,7 @@ fis.set('project.ignore', [
 
 
 fis
-	.match('src/css/(*.styl)', {
+	.match('src/css/(**)', {
 		parser: 'stylus',
 		preprocessor: fis.plugin('autoprefixer', {
 			'browsers': ['last 2 versions', 'iOS 7']
@@ -28,6 +28,9 @@ fis
 	})
 	.match('src/lib/(**)', {
 		release: '/lib/$1'
+	})
+	.match('src/font/(**)', {
+		release: '/font/$1'
 	})
 	.match('src/view/(**)', {
 		// parser: 'pug',

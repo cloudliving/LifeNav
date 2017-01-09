@@ -1,0 +1,70 @@
+shopInfo()
+	display flex
+	font-size 12px
+	color #a4a4a4
+	align-items baseline
+	span:first-child
+		font-size 16px
+		color #ff3d02
+		margin-right 5px
+	span:last-child
+		margin-left auto
+
+textOverflow(num)
+	overflow hidden
+	text-overflow ellipsis
+	display -webkit-box
+	-webkit-box-orient vertical
+	-webkit-line-clamp num
+
+bb()
+	position relative
+	&:before
+		position absolute
+		content ''
+		bottom 0
+		left 0
+		width 100%
+		height 1px
+		background repeating-linear-gradient(-45deg, #eb6932, #eb6932 5px, white 5px, white 10px, #10aefe 10px, #10aefe 15px, white 15px, white 20px)
+
+// shop list mixin
+shopList()
+	.shopList
+		background #fff
+		&-item
+			padding .3rem 0
+			border-bottom 1px solid #e5e5e5
+			&-wrap
+				display flex
+			&:last-child
+				border-bottom 0
+			&-thumb
+				width 1.75rem
+				height 2.1rem
+			&-main
+				margin-left 10px
+			&-name
+				font-size 16px
+				color #010101
+				margin-bottom 5px
+			&-intro
+				font-size 12px
+				margin-bottom 5px
+				line-height 1.8
+				height 65px
+				color #737373
+				textOverflow(3)
+
+			&-info
+				shopInfo()
+			// 	display flex
+			// 	font-size 12px
+			// 	color #a4a4a4
+			// 	align-items baseline
+			// &-cheapPrice
+			// 	font-size 16px
+			// 	color #ff3d02
+			// 	margin-right 5px
+			// &-people
+			// 	margin-left auto

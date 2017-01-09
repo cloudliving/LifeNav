@@ -1,0 +1,66 @@
+extends ../../components/layout-shop
+
+block title
+	title 社区惠民站
+
+block hdQuote
+	link(rel="stylesheet", href="../../css/shops/index.styl")
+
+block ctn
+	// banner
+	div.ui-slider
+		ul.ui-slider-content
+			li.current
+				span(style="background-image:url(http://placehold.sinaapp.com/?640*200)")
+			li
+				span(style="background-image:url(http://placehold.sinaapp.com//?640*200)")
+			li
+				span(style="background-image:url(http://placehold.sinaapp.com//?640*200)")
+
+
+	// nav
+	nav.bgfff
+		ul.nav
+			li.nav-item
+				a
+					img(src="../../images/shops/icon01.png")
+					p 购物车
+			li.nav-item
+				a
+					img(src="../../images/shops/icon02.png")
+					p 我的订单
+	// 推荐商品
+	div.recommend
+		p.recommend-title
+			img.recommend-title-icon(src="../../images/shops/icon03.png")
+			span 惠民推荐
+			a.recommend-more(href="#") 更多
+				img.recommend-more-icon(src="../../images/shops/arrow.png")
+		ul.shopList
+			li.shopList-item
+				a
+					div.shopList-item-wrap
+						div
+							img.shopList-item-thumb(src="../../images/shops/shop01.png")
+						div.shopList-item-main
+							p.shopList-item-name 荷兰婴幼儿奶粉
+							p.shopList-item-intro 科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,
+							div.shopList-item-info
+								span.shopList-item-cheapPrice 139元
+								del.shopList-item-fullPrice 219元
+								span.shopList-item-people 69/100人
+			li.shopList-item
+				a
+					div.shopList-item-wrap
+						div
+							img.shopList-item-thumb(src="../../images/shops/shop01.png")
+						div.shopList-item-main
+							p.shopList-item-name 荷兰婴幼儿奶粉
+							p.shopList-item-intro 科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,科学配方三行字,
+							div.shopList-item-info
+								span.shopList-item-cheapPrice 139元
+								del.shopList-item-fullPrice 219元
+								span.shopList-item-people 69/100人
+
+block ftQuote
+	script(src="../../js/shops/index.js")
