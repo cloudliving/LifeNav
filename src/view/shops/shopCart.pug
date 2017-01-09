@@ -23,10 +23,10 @@ block ctn
 						p.list-item-spec 规格  {{item.spec}}
 						div.m-counter.mlauto
 							button.m-counter-minus(@tap="minus(index)") -
-							input.m-counter-val(type="number" v-model="item.count")
+							input.m-counter-val(type="number" v-model="item.count" disabled)
 							button.m-counter-add(@tap="add(index)") +
-					div.flex.aib(style={color: "#ff3e00", 'font-size': '12px'})
-						span.list-item-price {{item.price*item.count}}
+					div.list-item-ft
+						span.list-item-price {{(item.price*item.count).toFixed(2)}}
 						| 元
 						button.list-item-del.mlauto(@tap="del(item.id, index)") 删除
 
@@ -47,7 +47,7 @@ block ftQuote
 				name: '荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉', // 商品名称
 				spec: '800g/盒', // 商品规格 specification
 				count: 1, // 选购数量
-				price: 139, // 商品单价
+				price: 98.98, // 商品单价
 				imgUrl: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit/images/shops/shop01.png' // 预览图地址
 			},
 			{
@@ -55,7 +55,7 @@ block ftQuote
 				name: '花王纸尿布', // 商品名称
 				spec: '54片', // 商品规格 specification
 				count: 1, // 选购数量
-				price: 72, // 商品单价
+				price: 15.27, // 商品单价
 				imgUrl: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit/images/shops/shop01.png' // 预览图地址
 			},
 		]
@@ -100,7 +100,7 @@ block ftQuote
 						total += el.count * el.price
 					})
 
-					return total
+					return total.toFixed(2)
 				}
 			}
 		})
