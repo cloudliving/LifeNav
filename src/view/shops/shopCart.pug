@@ -1,0 +1,111 @@
+extends ../../components/layout-shop
+
+block title
+	title 购物车
+
+block hdQuote
+	link(rel="stylesheet", href="../../css/shops/shopCart.styl")
+
+block ctn
+
+	#app
+		// 目的地
+		p.destination 您的商品将寄往茶港社区
+
+		// 购物车列表
+		ul.list
+			li.list-item(v-for="item,index in list")
+				div
+					img.list-item-thumb(:src="item.imgUrl")
+				div.list-item-main
+					p.list-item-title {{item.name}}
+					div.flex.aic.mb10
+						p.list-item-spec 规格  {{item.spec}}
+						div.m-counter.mlauto
+							button.m-counter-minus(@tap="minus(index)") -
+							input.m-counter-val(type="number" v-model="item.count")
+							button.m-counter-add(@tap="add(index)") +
+					div.flex.aib(style={color: "#ff3e00", 'font-size': '12px'})
+						span.list-item-price {{item.price*item.count}}
+						| 元
+						button.list-item-del.mlauto(@tap="del(item.id, index)") 删除
+
+		// 去结算
+		.goBuy
+			| 合计:
+			span <em>{{total}}</em>元
+			a(href="#") 去结算
+
+
+block ftQuote
+	script(src="../../lib/vue.js")
+	script.
+		// 数据数组
+		var data = [
+			{
+				id:11, // 商品id
+				name: '荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉荷兰奶粉', // 商品名称
+				spec: '800g/盒', // 商品规格 specification
+				count: 1, // 选购数量
+				price: 139, // 商品单价
+				imgUrl: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit/images/shops/shop01.png' // 预览图地址
+			},
+			{
+				id:22, // 商品id
+				name: '花王纸尿布', // 商品名称
+				spec: '54片', // 商品规格 specification
+				count: 1, // 选购数量
+				price: 72, // 商品单价
+				imgUrl: 'http://cloudliving-img.b0.upaiyun.com/static/Home/fruit/images/shops/shop01.png' // 预览图地址
+			},
+		]
+
+		// vue实例
+		// 类似weixin小程序
+		// https://cn.vuejs.org/
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				list: data
+			},
+			methods: {
+				add: function (index) {
+					this.list[index].count++
+				},
+				minus: function (index) {
+					this.list[index].count != 1 && this.list[index].count-- 
+				},
+				del: function (id, index) {
+					var that = this
+
+					$.dialog({
+					    title:'确定',
+					    content:'确定删除该商品?',
+					    button:["确认","取消"]	
+					})
+
+					$('#dialogButton0').on('tap', function(){
+						// 商品id
+						alert(`已删除, 商品id${id}`)
+						// 删除已被删除的数据
+						that.list.splice(index, 1)
+					})
+				}
+			},
+			computed: {
+				total: function () {
+					var total = 0
+
+					this.list.forEach(function (el, index) {
+						total += el.count * el.price
+					})
+
+					return total
+				}
+			}
+		})
+
+
+		// 获取数据
+		console.log(vm.list)
+		console.log(vm.total)

@@ -32,7 +32,7 @@ fis
 	.match('src/font/(**)', {
 		release: '/font/$1'
 	})
-	.match('src/view/(**)', {
+	.match('src/view/(**.pug)', {
 		// parser: 'pug',
 		parser: fis.plugin('pug', {
 			pretty: true
