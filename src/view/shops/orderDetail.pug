@@ -1,0 +1,52 @@
+extends ../../components/layout-shop
+
+block title
+	title 订单详情
+
+block hdQuote
+	link(rel="stylesheet", href="../../css/shops/orderDetail.styl")
+
+block ctn
+
+	// 订单号
+	.hd 订单号:
+		span.num 20181387614461
+		span.status 未支付
+
+	// 目的地
+	div.destination.bb
+		span 寄往：
+		div
+			p 王大锤 15301561249
+			p 武汉市武昌区水果湖接到茶港区党群服务中心
+
+	// 详情
+	div.detail
+		div
+			img.detail-thumb(src="../../images/shops/shop01.png")
+		div.detail-main
+			p.detail-name 花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤花王纸尿裤
+			div.detail-attr
+				p 商品总额: ￥139
+				p + 运费: ￥0
+				p - 商品优惠: ￥0
+			div.detail-count.aib
+				span.mrauto 应付款: <em>￥ 119</em>
+				| X 1
+
+
+	// 咨询客服
+	//- .ftBar
+		img.ftBar-icon(src="../../images/shops/tel.png")
+		span 咨询客服: 
+		a.ftBar-phone(href="tel: 400800832") 400800832
+		a.ftBar-btn(href="#") 马上支付
+
+	// 咨询客服(没有支付按钮)
+	.ftBar.ftBar-1
+		img.ftBar-icon(src="../../images/shops/tel.png")
+		span 咨询客服: 
+		a.ftBar-phone(href="tel: 400800832") 400800832
+
+
+block ftQuote

@@ -1,0 +1,109 @@
+@import '../../mixin/shops'
+
+body
+	background #f5f5f5
+.bb
+	bb()
+
+// 订单号
+.hd
+	display flex
+	padding 0 .25rem
+	line-height 60px
+	background #fff
+	font-size 14px
+	color #000
+	margin-bottom 10px
+	
+	.num
+		color #808080
+		margin-left 5px
+
+	.status
+		color #ed6934
+		margin-left auto
+
+// 目的地
+.destination
+	display flex
+	background #fff
+	padding .3rem .25rem
+	font-size 14px
+	color #000
+
+	p
+		color #808080
+	p + p
+		margin-top 5px
+
+// 详情
+.detail
+	margin-top 10px
+	background #fff
+	padding .3rem .25rem
+	display flex
+
+	&-thumb
+		width 1.75rem
+		margin-right .16rem
+		
+	&-name
+		textOverflow(2)
+
+		margin-bottom 10px
+
+	&-attr
+		font-size 12px
+		color #808080
+		line-height 1.8
+
+	&-count
+		display flex
+		font-size 12px
+		margin-top 5px
+		
+		em
+			color #ff3e00
+			font-size 18px
+			margin-left 5px
+
+		span
+			color #808080
+
+
+// 咨询客服
+.ftBar
+	display flex
+	position fixed
+	left 0
+	bottom 0
+	width 100%
+	height 60px
+	padding 0 .25rem
+	background #fff
+	border-top 1px solid #eee
+	align-items center
+	font-size 14px
+	color #7f7f7f
+
+	&-1
+		justify-content center
+	
+	&-icon
+		width .3rem
+		margin-right 10px
+		
+	&-phone
+		color #fe9101
+
+	&-btn
+		display inline-block
+		height .68rem
+		padding 0 .36rem
+		margin-left auto
+		line-height .68rem
+		background #ee6a34
+		color #fff
+		border-radius 2em
+		&:hover
+			color #fff

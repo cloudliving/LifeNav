@@ -1,0 +1,123 @@
+extends ../../components/layout-shop
+
+block title
+	title 我的订单
+
+block hdQuote
+	link(rel="stylesheet", href="../../css/shops/order.styl")
+
+block ctn
+	.ui-tab
+		ul.ui-tab-nav.ui-border-b
+			li.current 待支付
+			li 已支付
+			li 已完成
+		ul.ui-tab-content
+			// 待支付
+			li.current
+				ul.orderList
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+
+			// 已支付
+			li
+				ul.orderList
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+
+			// 已完成
+			li
+				ul.orderList
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+					li.orderList-item
+						div.orderList-item-hd
+							img.orderList-item-logo(src="../../images/shops/logo.png")
+							span 云生活
+							span.orderList-item-num 201701235148615
+							button.orderList-item-del
+								img.orderList-item-delImg(src="../../images/shops/trash.png")
+						div.orderList-item-bd
+							a(href="#")
+								div.flex
+									img.orderList-item-thumb(src="../../images/shops/shop01.png")
+									p.orderList-item-name 荷兰奶粉
+							div.orderList-item-count.flex
+								span.mrauto 共<em>1</em>件商品
+								span 实付款: <em>￥139.00</em>
+
+
+block ftQuote
+	script.
+		$(function(){
+			new fz.Scroll('.ui-tab', {role: 'tab'})
+		})
